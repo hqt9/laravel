@@ -23,6 +23,10 @@ Route::any('/', function () {
     return view('home/index');
 });
 
+Route::any('home', function () {
+    return view('home/home');
+});
+
 Route::any('index', 'Home\IndexController@index');
 
 Route::any('register', 'Home\IndexController@register');
