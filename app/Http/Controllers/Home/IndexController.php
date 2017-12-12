@@ -28,20 +28,22 @@ class IndexController extends Controller
         ];
 
         $validator = Validator::make($_params, $rules, $messages);
-
-        
-        $api = getBaseApi();
-        
         if ($validator->fails()) {
+            // return back()->with('error', getBaseApi());
 
-            return back()->with('error', $api);
-            // $error = [
-            //     'success' => false,
-            //     'message' => 'error',
-            //     'data' => array(),
-            // ];
-            // return $error['message'];
+            return response()->json([
+                'success' => false,
+                'message' => 'required',
+                'data' => array(),
+            ]);
         }
+        // $api = getBaseApi();
+        $result = curlPost(
+                   getBaseApi().'/home', 
+                   ['a' => 'info', 'qq' => '979137']
+        );
+
+        var_dump($result);
 
     	$email = $_params['email'];
     	$password = $_params['password'];
@@ -58,7 +60,7 @@ class IndexController extends Controller
     		return view('home/home');
     	}
 
-		return back()->with('error', 'Email/Password is error! Please try again.');
+		// return back()->with('error', 'Email/Password is error! Please try again.');
 
     }
 
@@ -94,5 +96,11 @@ class IndexController extends Controller
     	// $res = DB::table('logo_in')->get();
     	echo date("Y-m-d H:i:s", time());
     	dd(($res));
+    }
+
+
+    public function testApi()
+    {
+
     }
 }
