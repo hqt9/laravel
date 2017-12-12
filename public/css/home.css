@@ -13,5 +13,6 @@ body {background: #373330; }
 .form-holder .btn-set {padding: 10px 0;}
 .form-holder .btn-set .btn-login {background-color: #39967E;display: inline-block;width: 40%; text-align: center;padding: 15px 30px;font-size: 16px;color: #fff;border-radius: 5px;transition: background-color .25s;text-decoration: none;}
 .form-holder .btn-set .btn-register {padding-left: 50px;text-decoration: underline;color: #39967e;}
-.login-loading {display: none;position: fixed;top: 0;right: 0; bottom: 0;left: 0; width: 80px;height: 80px; margin: auto;background: url(/laravel/public/images/loading.svg) rgba(0,0,0,.3) no-repeat center;background-size: 60px;border-radius: 5px;}
+.login-loading {display: none;position: fixed;top: 0;right: 0; bottom: 0;left: 0; width: 80px;height: 80px; margin: auto;background: url(http://127.0.0.1/laravel/public/images/loading.svg) rgba(0,0,0,.3) no-repeat center;background-size: 60px;border-radius: 5px;}
 .login-loading.active {display: inherit;}
+
