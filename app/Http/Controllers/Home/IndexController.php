@@ -40,25 +40,25 @@ class IndexController extends Controller
         // $api = getBaseApi();
         $result = curlPost(
                    getBaseApi().'/home', 
-                   ['a' => 'info', 'qq' => '979137']
+                   json_encode(['a' => $_params['email'], 'qq' => '979137'])
         );
+        echo $result[0]['email'];
+        print_r($result);
 
-        var_dump($result);
+    	// $email = $_params['email'];
+    	// $password = $_params['password'];
 
-    	$email = $_params['email'];
-    	$password = $_params['password'];
+    	// $model = new Home;
+    	// $res = $model::where('email', $email)->get();
 
-    	$model = new Home;
-    	$res = $model::where('email', $email)->get();
+    	// foreach ($res as $k) {
+    	// 	// echo $k->email;
+    	// }
 
-    	foreach ($res as $k) {
-    		// echo $k->email;
-    	}
-
-    	// dd(($k->email));die;
-    	if(isset($k->email) && $k->password == $password){
-    		return view('home/home');
-    	}
+    	// // dd(($k->email));die;
+    	// if(isset($k->email) && $k->password == $password){
+    	// 	return view('home/home');
+    	// }
 
 		// return back()->with('error', 'Email/Password is error! Please try again.');
 

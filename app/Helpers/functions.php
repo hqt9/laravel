@@ -61,14 +61,15 @@ if(!function_exists('curlPost')) {
         curl_setopt($ch,CURLOPT_TIMEOUT,30000);
         // curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,0);
 
-        // curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        //     'Content-Type: application/json; charset=utf-8',
-        //     'Expect:',
-        //     'Content-Length: ' . strlen($_params))
-        // ); 
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json; charset=utf-8',
+            'Expect:',
+            'Content-Length: ' . strlen($_params))
+        ); 
         $_result = curl_exec($ch);
         curl_close($ch);
         return json_decode($_result, true);
+        // return $_result;
     }
 }
 
