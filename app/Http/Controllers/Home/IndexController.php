@@ -13,7 +13,6 @@ class IndexController extends Controller
     public function index(Request $request)
     {
     	$_params = $request->all();
-
         $rules = [
             'email' => [
                 'required',
@@ -30,20 +29,33 @@ class IndexController extends Controller
         $validator = Validator::make($_params, $rules, $messages);
         if ($validator->fails()) {
             // return back()->with('error', getBaseApi());
-
             return response()->json([
                 'success' => false,
                 'message' => 'required',
                 'data' => array(),
             ]);
         }
-        // $api = getBaseApi();
+
         $result = curlPost(
                    getBaseApi().'/home', 
                    json_encode(['a' => $_params['email'], 'qq' => '979137'])
         );
-        echo $result[0]['email'];
-        print_r($result);
+
+        if($result['success'] === true){
+            return response()->json([
+                'success' => true,
+                'message' => '',
+                'data' => array('name' => $result['name'], 'eamil' => $result['email'])
+            ]);
+        }
+
+        return response()->json([
+            'success' => false,
+            'message' => '',
+            'data' => ''
+        ]);
+
+        // var_dump($result);
 
     	// $email = $_params['email'];
     	// $password = $_params['password'];
