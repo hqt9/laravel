@@ -3,8 +3,9 @@ body {background: #373330; }
     background-color: #fff;box-shadow: 0 5px 30px 0 #000;margin: auto;margin-top: 10%;max-width: 450px;min-width: 300px;font-size: 16px;padding: 0 40px;box-sizing: border-box;}
 .login-container .logo {padding: 20px 20px 0 20px; }
 .login-container h1 {color: #39967e; padding: 20px 0; text-align: center;font-size: 24px;  }
-.login-container form > .error {text-align: center;color: #F44336;padding-top: 10px; }
-.login-container .form-holder {padding: 20px; }
+
+ form > div.error {color: #F44336;padding: 15px 0 0 20px; }
+.form-holder {padding: 20px; }
 .form-holder .form-group {padding-bottom: 30px;}
 .form-holder .form-group label {display: block;width: 100%; padding: 10px 0;}
 .form-holder .form-group input {padding: 8px;border: 1px solid #adadad;border-radius: 2px; width: 100%;font-size: 14px;}
@@ -15,4 +16,11 @@ body {background: #373330; }
 .form-holder .btn-set .btn-register {padding-left: 50px;text-decoration: underline;color: #39967e;}
 .login-loading {display: none;position: fixed;top: 0;right: 0; bottom: 0;left: 0; width: 80px;height: 80px; margin: auto;background: url(http://127.0.0.1/laravel/public/images/loading.svg) rgba(0,0,0,.3) no-repeat center;background-size: 60px;border-radius: 5px;}
 .login-loading.active {display: inherit;}
+
+
+
+/*regiter*/
+.register-container {max-width: 450px;margin: auto;margin-top: 10%;box-sizing: border-box;background-color: #fff;padding: 0 40px; }
+.register-container h1 {padding: 20px;text-align: center;font-size: 24px;border-bottom: 1px solid #fdeae8; }
+.register-container .form-holder .form-group {padding-bottom: 10px;}
 

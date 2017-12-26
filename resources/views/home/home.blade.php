@@ -9,11 +9,10 @@
 	</style>
 </head>
 <body>
-<h1>Hello: HQT. Welcome!</h1>
-<p>scan</p>
-<p>back</p>
-<p>home</p>
-
+	<h1>Hello: HQT. Welcome!</h1>
+	<p>scan</p>
+	<p>back</p>
+	<p>home</p>
 </body>
 
 <script type="text/javascript">

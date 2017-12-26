@@ -93,7 +93,7 @@
                         if (response.success !== false) {
                             window.location.href = '/home';
                         } else {
-                            $('.error').text('Error: Invalid login or password.' + response.message);
+                            $('div.error').text('Error: ' + response.message);
                         }
                         $('.login-loading').removeClass('active');
                     });
@@ -102,9 +102,16 @@
             });
 
             $('input').on('focus', function(){
+                $(this).closest('#form1').find('div.error').text('');
                 $(this).removeClass('error');
                 $(this).closest('.form-group').find('.msg-errors').text('').removeClass('active');
             });
+
+            $(document).keydown(function(e){
+                if (e.keyCode == 13) {
+                    $('.btn-login').click();
+                }
+            })
         });
 
     </script>

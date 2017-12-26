@@ -14,6 +14,9 @@ class IndexController extends Controller
     {
     	$_params = $request->all();
         $rules = [
+            '_token' => [
+                'required'
+            ],
             'email' => [
                 'required',
             ],
@@ -32,26 +35,26 @@ class IndexController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'required',
-                'data' => array(),
+                'data' => '',
             ]);
         }
 
         $result = curlPost(
                    getBaseApi().'/home', 
-                   json_encode(['a' => $_params['email'], 'qq' => '979137'])
+                   json_encode(['email' => $_params['email'], 'password' => $_params['password']])
         );
 
-        if($result['success'] === true){
+        if(isset($result['success']) && $result['success'] === true){
             return response()->json([
                 'success' => true,
                 'message' => '',
-                'data' => array('name' => $result['name'], 'eamil' => $result['email'])
+                'data' => array('name' => $result['name'], 'eamil' => $result['email'], 'token' => $_params['_token'])
             ]);
         }
 
         return response()->json([
             'success' => false,
-            'message' => '',
+            'message' => $result,
             'data' => ''
         ]);
 
@@ -77,37 +80,82 @@ class IndexController extends Controller
     }
 
 
-
-
     public function register(Request $request)
+    {
+        return view('home/register');
+    }
+
+    public function registers(Request $request)
     {
     	$_params = $request->all();
 
-    	$_token = isset($_params['_token']) ? $_POST['_token'] : '';
+        // $_token = isset($_params['_token']) ? $_POST['_token'] : '';
+        // if ($_token == '') {
+        //     return view('home/register');
+        // }
 
-    	if ($_token == '') {
-    		return view('home/register');
-    	}
+        $rules = [
+            // '_token' => [
+            //     'required'
+            // ],
+            'email' => [
+                'required',
+            ],
+            'password' => [
+                'required',
+            ],
+        ];
 
-    	$name = $_params['name'];
-    	$email = $_params['email'];
-    	$password = $_params['password'];
-    	$tel =$_params['tel'];
+        $messages = [
+            'required' => 'required',
+        ];
 
-    	$model = new Home;
-    	$res = $model::firstOrCreate([
-    	// $res = $model::create([
-    		'name' => $name,
-    		'email' => $email,
-    		'password' => $password,
-    		'tel' => $tel
-    	]);
+        $validator = Validator::make($_params, $rules, $messages);
+        if ($validator->fails()) {
+            // return back()->with('error', getBaseApi());
+            return response()->json([
+                'success' => false,
+                'message' => 'required',
+                'data' => '',
+            ]);
+        }
 
-    	// $res = $model::all();
-    	// $res = DB::select('select * from logo_in');
-    	// $res = DB::table('logo_in')->get();
-    	echo date("Y-m-d H:i:s", time());
-    	dd(($res));
+
+        $result = curlPost(
+                   getBaseApi().'/register', 
+                   json_encode(['name' => $_params['name'], 'email' => $_params['email'], 'password' => sha1(md5($_params['password'])), 'tel' => $_params['tel']])
+                   // json_encode(['name' => $_params['name'], 'email' => $_params['email'], 'password' => $_params['password'], 'tel' => $_params['tel']])
+        );
+
+        if (isset($result['success']) && $result['success'] === true) {
+            return response()->json([
+                'success' => true,
+                'message' => $result['info'],
+                'data' => array('name' => $_params['name'], 'email' => $_params['email'], 'tel' => $_params['tel'])
+            ]);
+        }
+
+        return response()->json([
+            'success' => false,
+            'message' => $result,
+            'data' => ''
+        ]);
+
+    	// $name = $_params['name'];
+    	// $email = $_params['email'];
+    	// $password = $_params['password'];
+    	// $tel =$_params['tel'];
+
+    	// $model = new Home;
+    	// $res = $model::firstOrCreate([
+    	// // $res = $model::create([
+    	// 	'name' => $name,
+    	// 	'email' => $email,
+    	// 	'password' => $password,
+    	// 	'tel' => $tel
+    	// ]);
+
+    
     }
 
 
