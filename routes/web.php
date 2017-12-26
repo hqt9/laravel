@@ -30,4 +30,5 @@ Route::any('home', function () {
 Route::any('index', 'Home\IndexController@index');
 
 Route::any('register', 'Home\IndexController@register');
+Route::any('registers', 'Home\IndexController@registers');
 
