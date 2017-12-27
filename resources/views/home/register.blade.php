@@ -154,6 +154,7 @@
                 $(this).closest('.form-group').find('.msg-errors').text('').removeClass('active');
             });
 
+            //add Enter event
             $(document).keydown(function(e){
                 if (e.keyCode == 13) {
                     $('.btn-login').click();

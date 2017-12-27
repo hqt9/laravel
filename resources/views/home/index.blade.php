@@ -91,7 +91,8 @@
                         }
                     }).done(function(response) {
                         if (response.success !== false) {
-                            window.location.href = '/home';
+                            var _data = response.data;
+                            window.location.href = '/home?name=' + _data.name +'&email=' + _data.email;
                         } else {
                             $('div.error').text('Error: ' + response.message);
                         }

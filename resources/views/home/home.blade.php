@@ -5,11 +5,13 @@
 	<style type="text/css">
 		body {background: #b9cfb9;}
 		h1 {text-align: center;padding-top: 100px; font-size: 48px;}
+		h1 span {color: red;}
 		p {text-align: center;padding-top: 100px; font-size: 48px;}
 	</style>
 </head>
 <body>
-	<h1>Hello: HQT. Welcome!</h1>
+	<?php $name = $_GET['name']; ?>
+	<h1>Hello: <span><?php echo $name; ?></span>. Welcome!</h1>
 	<p>scan</p>
 	<p>back</p>
 	<p>home</p>

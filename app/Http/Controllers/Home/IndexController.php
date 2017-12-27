@@ -48,7 +48,7 @@ class IndexController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => '',
-                'data' => array('name' => $result['name'], 'eamil' => $result['email'], 'token' => $_params['_token'])
+                'data' => array('name' => $result['name'], 'email' => $result['email'], 'token' => $_params['_token'])
             ]);
         }
 
