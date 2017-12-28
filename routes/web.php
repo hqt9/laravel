@@ -23,12 +23,19 @@ Route::any('/', function () {
     return view('home/index');
 });
 
-Route::any('home', function () {
-    return view('home/home');
-});
+Route::any('home', 'Home\IndexController@home');
+// Route::any('home', 'Home\IndexController@home')->middleware('checklog');
+
+// Route::any('home', function () {
+//     return view('home/home');
+// })->middleware('checklog');
 
 Route::any('index', 'Home\IndexController@index');
 
 Route::any('register', 'Home\IndexController@register');
 Route::any('registers', 'Home\IndexController@registers');
 
+Route::any('homess', function () {
+    return response('Hello World', 200)
+        ->header('Content-Type', 'text/plain');
+});

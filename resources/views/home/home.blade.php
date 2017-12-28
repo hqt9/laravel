@@ -10,7 +10,7 @@
 	</style>
 </head>
 <body>
-	<?php $name = $_GET['name']; ?>
+	<?php $name = (isset($_GET['name'])) ? $_GET['name'] : 'Guest'; ?>
 	<h1>Hello: <span><?php echo $name; ?></span>. Welcome!</h1>
 	<p>scan</p>
 	<p>back</p>

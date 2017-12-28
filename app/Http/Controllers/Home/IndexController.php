@@ -159,8 +159,17 @@ class IndexController extends Controller
     }
 
 
-    public function testApi()
+    public function home()
     {
-
+        $_result = curlPost(
+                    getBaseApi().'/login/',
+                    json_encode([ 'email' => session('email'), 'password' => session('password') ])
+                );
+        if($_result['success'] === true){
+            return view('home/home');
+            // return redirect()->action('HomeController@index');
+        }
+        // return view('admin.index', ['title' => 'Sign In']);
+        return redirect('/');
     }
 }

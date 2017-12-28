@@ -16,14 +16,14 @@ class CheckLog
     public function handle($request, Closure $next)
     {
         $_params = $request->all();
-        if (isset($_params['aid']) ===true && isset($_params['_token']) === true && $_params['aid'] > 0 ) {
+        if (isset($_params['email']) ===true && isset($_params['_token']) === true) {
             $result = curlPost(
-                getBaseApi().'home/',
-                json_encode([ '_token' => $_params['_token'], 'aid' => $_params['aid'] ])
+                getBaseApi().'/home/',
+                json_encode([ 'email' => $_params['email'], 'password' => $_params['password'] ])
             );
-            if ($result['success'] === ture) {
+            if ($result['success'] === true) {
                 return $next($request);
-            } else ($result === false) {
+            } elseif ($result === false) {
                 return response([
                     'success' => -1,
                     'message' => 'auth is login in another locale',
