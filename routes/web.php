@@ -23,12 +23,12 @@ Route::any('/', function () {
     return view('home/index');
 });
 
-Route::any('home', 'Home\IndexController@home');
+// Route::any('home', 'Home\IndexController@home');
 // Route::any('home', 'Home\IndexController@home')->middleware('checklog');
 
-// Route::any('home', function () {
-//     return view('home/home');
-// })->middleware('checklog');
+Route::any('home', function () {
+    return view('home/home');
+});//->middleware('checklog');
 
 Route::any('index', 'Home\IndexController@index');
 

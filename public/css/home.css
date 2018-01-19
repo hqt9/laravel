@@ -1,3 +1,8 @@
+.fl {float: left;}
+.fr { float: right; }
+.clearfix {content: '';display: table;clear: both;}
+.clear { clear: both; }
+img {width: 100%;height: auto;}
 body {background: #373330; }
 .login-container {border: 1px solid #e3e3e3;
     background-color: #fff;box-shadow: 0 5px 30px 0 #000;margin: auto;margin-top: 10%;max-width: 450px;min-width: 300px;font-size: 16px;padding: 0 40px;box-sizing: border-box;}
@@ -24,3 +29,133 @@ body {background: #373330; }
 .register-container h1 {padding: 20px;text-align: center;font-size: 24px;border-bottom: 1px solid #fdeae8; }
 .register-container .form-holder .form-group {padding-bottom: 10px;}
 
+
+/*raccoon*/
+.raccoon { background-color: #f1f1f1; overflow-x: hidden; }
+h2 { font-size: 38px; }
+header { position: fixed; width: 100%; z-index:99; color: #39967E; background-color: #fff;}
+header .logo a { display: block; height: 70px; padding: 0 10px; }
+header .logo a img {height: 121px; width: auto; margin-top: -29px;}
+header .tel div {display: inline-block;}
+header .tel i {display: block;font-size: 28px;padding-top: 22px;}
+header .tel .number a {display: block;padding: 21px 10px;line-height: 28px;font-size: 18px;font-weight: 700;font-family: Verdana;}
+header .header-section .nav-item {float: left;width:80px;height: 70px;background-color: #fff;cursor: pointer;position: relative;}
+header .header-section .nav-item:hover {background-color: #f1f1f1;}
+header .header-section .nav-item.active {background-color: #3fabae;color: #fff;}
+header .header-section .nav-item > a { display: block; text-align: center; line-height: 75px; transition: height 0.3s linear,line-height 0.3s linear; }
+header .header-section .nav-item.solve:hover .nav-item-list {display: block;}
+header .header-section .nav-item .nav-item-list {display: none;position: absolute; background-color: #27a28a; color: #fff;width: 120px; top: 70px;}
+header .header-section .nav-item .nav-item-list li:first-child {border-bottom: 1px solid #39967E;}
+header .header-section .nav-item .nav-item-list a { display: block; padding: 20px 50px 20px 8px; }
+.main { padding-top: 70px; width: 100%; }
+.main .banner { background: #3fabae url("http://laravel.test.com/images/banner_index03.jpg") center bottom no-repeat; height: 640px; margin-bottom: 20px; }
+.main .banner-title { text-align: center; font-size: 24px; color: #fff; }
+.main .banner-title h3 { font-size: 38px; padding-top: 50px; padding-bottom: 15px; }
+.main .banner .btn { width: 80px; margin: 210px auto 0; }
+.main .banner .btn a { animation:home-banner 1.8s infinite; -webkit-animation:home-banner 1.8s infinite;display: block;background: #2a989b url("http://laravel.test.com/images/ckfw.png") center no-repeat; width: 80px; height: 80px;border-radius: 50%;  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); }
+.main .banner .btn a:hover { border: none; animation:btn-hover 1.2s infinite; -webkit-animation:btn-hover 1.2s infinite; }
+@-webkit-keyframes home-banner
+{
+  0% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); }
+  50% { box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.4); }
+  100% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); }
+}
+@keyframes home-banner
+{
+  0% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); }
+  50% { box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.4); }
+  100% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); }
+}
+@-webkit-keyframes btn-hover
+{
+  0% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); background-color: #2a989b; }
+  50% { box-shadow: 0 0 55px 35px rgba(255, 255, 255, 0.4); background-color: #40ABB1; }
+  100% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); background-color: #2a989b; }
+}
+@keyframes btn-hover
+{
+  0% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); background-color: #2a989b; }
+  50% { box-shadow: 0 0 55px 35px rgba(255, 255, 255, 0.4); background-color: #40ABB1 }
+  100% { box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4); background-color: #2a989b; }
+}
+
+.page-width { max-width: 980px; margin: 0 auto; position: relative; }
+.main .page-width .title { text-align: center;  }
+.main .page-width .title h2 { color: #000; display: inline-block;padding: 10px 20px; border-bottom: 1px solid #39967e; }
+.main .page-width .title p {padding: 8px 0 25px; margin: -1px -100% 0; border-top: 1px solid #e0e0e0; color: #aaa; text-transform: uppercase; }
+.main .page-width .content { width: 100%; }
+.main .page-width .core-content li { position: relative; float: left; width: 48%; margin: 0 4% 4% 0; height: 220px; background-color: #fff; }
+.main .page-width .core-content li:nth-child(even) { margin-right: 0; }
+.main .page-width .core-content li .bg { position: absolute; top: 45px; left: 8%; width: 120px; height: 120px; border-radius: 50%; background: #f66576 url("http://laravel.test.com/images/home-bg.png") no-repeat; background-size: 716px; }
+.main .page-width .core-content li .bg:hover { background-color: #32373d; border-color: #000; }
+.main .page-width .core-content li:nth-child(1) .bg { background-position: -17px -12px; }
+.main .page-width .core-content li:nth-child(2) .bg { background-position: -152px -13px; }
+.main .page-width .core-content li:nth-child(3) .bg { background-position: -290px -10px; }
+.main .page-width .core-content li:nth-child(4) .bg { background-position: -439px -12px; }
+
+.main .page-width .core-content  li dl { float: right; width: 48%; top: 0; }
+.main .page-width .core-content  li dl dt { margin-top: 50px; margin-bottom: 20px; font-size: 24px; }
+.main .page-width .core-content  li dl dt a { color: #39967e; }
+.main .page-width .core-content  li dl dd { font-size: 12px; line-height: 24px; }
+.main .page-width .core-content  li dl dd:before { content: '>'; padding-right: 5px; font-family: Courier New; }
+
+.main .project-process { background-color: #fff; width: 100%; margin: 20px 0; }
+.main .project-process .title span { line-height: 35px; }
+.main .content-project { width: 100%; margin-top: 30px; }
+
+.main .content-project ol { position: absolute; top: 240px; left: 12px; }
+.main .content-project ol li { float: left; width: 197px; text-align: right; }
+.main .content-project ol li:after { content: '➤'; width: 50px; height: 50px; color: rgba(57, 60, 59, 0.56); font-size: 25px; }
+
+.main .content-project ul li { position: relative; background-color: #aaa; float: left; width: 150px; height: 150px; border-radius: 50%; margin-right: 5%; border: 3px solid; box-sizing: border-box; text-align: center; overflow: hidden; cursor: pointer; }
+.main .content-project ul li:nth-child(1) { margin-left: 15px; background-color: #f66576; border-color: #f66576; }
+.main .content-project ul li:nth-child(2) { background-color: #00ade9; border-color: #00ade9; }
+.main .content-project ul li:nth-child(3) { background-color: #f3782a; border-color: #f3782a; }
+.main .content-project ul li:nth-child(4) { background-color: #00bc92; border-color: #00bc92; }
+.main .content-project ul li:nth-child(5) { margin-right: 0; background-color: #557399; border-color: #557399; }
+.main .content-project ul li .bg { display: inline-block; width: 150px; height: 90px; background: url("http://laravel.test.com/images/home-bg.png") no-repeat; background-size: 716px;  }
+.main .content-project ul li:nth-child(1) .bg { background-position: 0 -165px; }
+.main .content-project ul li:nth-child(2) .bg { background-position: 0 -165px; }
+.main .content-project ul li:nth-child(3) .bg { background-position: 0 -165px; }
+.main .content-project ul li:nth-child(4) .bg { background-position: 0 -165px; }
+.main .content-project ul li:nth-child(5) .bg { background-position: 0 -165px; }
+.main .content-project ul li h4 { background-color: #fff; line-height: 20px; padding: 5px 0 50px; margin: 0 -20px; }
+.main .project-process .content p { font-size: 28px; font-family: monospace; font-style: italic; color: #aaa; text-align: center; padding: 60px 0; }
+
+.main .home-about { margin: 30px 0 50px; }
+.main .about-list li { float: left; overflow: hidden; font-size: 0; }
+.main .about-list li:nth-child(4) { margin-top: -188px; }
+.main .about-list li p { position: relative; width: 215px; height: 132px; text-align: center; font-size: 100px; font-weight: 700; line-height: 120px; }
+.main .about-list li p span { position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; height: 30px; font-size: 16px; color: #fff; font-weight: normal; line-height: 30px; }
+.main .about-list li:nth-child(1) p { background-color: #f66576; color: #f14453; }
+.main .about-list li:nth-child(1) p span { background-color: #f66576;}
+.main .about-list li:nth-child(5) p { background-color: #00bf95; color: #008169; }
+.main .about-list li:nth-child(5) p span { background-color: #00bf95; }
+.main .about-list li:nth-child(7) p { background-color: #f3782a; color: #ee511d; }
+.main .about-list li:nth-child(7) p span { background-color: #f3782a; }
+
+.main .home-cooperation { background-color: #fff; padding: 50px 0; }
+
+
+footer { margin-top:20px; font-size: 14px; color: #666; }
+footer .foot-border-bottom { border-bottom: 1px solid #ccc; }
+footer .foot-content { float: left; width: 644px; margin-left: 168px; }
+footer .foot-content ul { margin: 0 auto; text-align: center; }
+footer .foot-content .link li { float: left; }
+footer .foot-content .link li a { display: inline-block; padding: 20px 10px; }
+
+footer .foot-wechat { float: right; width: 148px; padding: 10px 0; }
+footer .foot-content .contact-info { padding: 10px 0; }
+footer .foot-content .contact-info ul { width: 80%; }
+footer .foot-content .contact-info ul li { float: left; margin: 0 10px; }
+footer .foot-content .contact-info ul li:nth-child(2) { float: right; }
+footer .foot-content .contact-info ul li a { display: inline-block; padding: 10px 0; }
+
+footer .foot-content .copyright { padding-top: 10px; text-align: center; }
+footer .foot-content .copyright span { display: block; padding-top: 10px; }
+footer .foot-content .copyright a { display: block; line-height: 20px; }
+.cnzz { display: block; text-align: center; padding-bottom: 10px; }
+
+#gotop { position: fixed; width: 50px; height: 50px; display: none; right: 1%; bottom: 280px; background: url("http://laravel.test.com/images/go-top.png") center no-repeat; background-size: contain; transition: opacity 0.5s; z-index: 99; } 
+#gotop:hover { background-image: url("http://laravel.test.com/images/go-top-hover.png"); }
+#gotop.active { display: block; }
